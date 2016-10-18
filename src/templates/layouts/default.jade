@@ -1,0 +1,27 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+
+    title= base.title
+
+    meta(property='og:url', content='')
+    meta(property='og:type', content='website')
+    meta(property='og:title', content='')
+    meta(property='og:description', content='')
+    //- todo: update
+    meta(property='og:image', content='')
+
+    //- Include base stylesheet
+    link(href='main.css', rel='stylesheet')
+    //- link(rel='icon', href='/assets/images/favicon.png')
+
+  //- HTML BODY
+  body
+
+    //- The content block should contain the body of your template's content
+    block content
+
+    script(src='../bundle.js')
