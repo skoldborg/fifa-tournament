@@ -1,0 +1,21 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased; }
+
+body {
+  position: relative;
+  background-color: #FFFFFF;
+  font-family: "Helvetica neue", Helvetica, sans-serif; }
+
+*, *:before, *:after {
+  box-sizing: border-box; }
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+img {
+  max-width: 100%; }

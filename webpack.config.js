@@ -6,9 +6,7 @@ module.exports = function(){
     var config = {
         watch: true,
         entry: [
-            path.resolve('src/scripts/main'),
-            'webpack-hot-middleware/client',
-            'webpack/hot/dev-server'
+            path.resolve('src/scripts/main')
         ],
         output: {
             path: path.resolve('./build'),
@@ -29,7 +27,6 @@ module.exports = function(){
         },
         plugins: [
             new webpack.optimize.OccurenceOrderPlugin(),
-            new webpack.HotModuleReplacementPlugin(),
             new webpack.NoErrorsPlugin()
         ],
         resolve: {

@@ -8,23 +8,24 @@ Lightweight FE boilerplate w/ webpack workflow and a basic express server for ro
 $ yarn install
 ```
 
+Requires nodemon to be installed globally
+
+```sh
+$ yarn global add nodemon
+```
+
 ## Development
 
 ```sh
 $ npm start
 ```
 
-Server defaults to port 3001 or whatever is set as env variable PORT
-
 ## Production
 
-```sh
-$ npm build
-```
+No production step yet :(
 
 ## Features
 
 - Webpack, w/ hot reloading
 - Babel (ES6)
-- SCSS w/ postcss loader
 - Jade template engine

@@ -13,7 +13,6 @@ const destPath = path.join(__dirname, 'src');
 const webpackConfig = require('./webpack.config.js');
 const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
-const webpackHotMiddleware = require('webpack-hot-middleware');
 const webpackCompiler = webpack(webpackConfig);
 
 // Styles
@@ -39,23 +38,21 @@ app.use(webpackDevMiddleware(webpackCompiler,
     }
 ));
 
-// Set up Webpack hot reloading
-app.use(webpackHotMiddleware(webpackCompiler, { log: console.log }));
-
 // Compile sass
-app.use( '/styles',
+app.use('/styles',
     sassMiddleware({
         src: __dirname + '/src/styles',
         dest: destPath,
-        indentedSyntax: true,
+        indentedSyntax: false,
+        force: true,
         // Prevents file from being written to disk
         response: false,
         // Plugin to allow globbing of sass imports
         importer: nodeSassGlobbing,
-        debug: true,
+        debug: false,
         // Vendor paths
         includePaths: [
-            // './node_modules/foundation-sites/scss'
+            // './node_modules/library/scss'
         ]
     })
 );
@@ -68,7 +65,6 @@ app.use('/styles', postcssMiddleware({
         })
     ],
     src: function(req) {
-        console.log(path.join(destPath, req.url));
         return path.join(destPath, req.url);
     }
 }));
