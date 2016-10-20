@@ -4,7 +4,6 @@ require('dotenv').config();
 const express = require ('express');
 const app = express();
 const path = require('path');
-const fs = require('fs');
 const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
 const destPath = path.join(__dirname, 'src');
@@ -44,7 +43,6 @@ app.use('/styles',
         src: __dirname + '/src/styles',
         dest: destPath,
         indentedSyntax: false,
-        force: true,
         // Prevents file from being written to disk
         response: false,
         // Plugin to allow globbing of sass imports
@@ -57,15 +55,17 @@ app.use('/styles',
     })
 );
 
+// Prefix and serve css
 app.use('/styles', postcssMiddleware({
     plugins: [
         autoprefixer({
-            browsers: ['last 2 versions', 'IE 9'],
+            browsers: ['last 3 versions', 'IE 9'],
             cascade: false
         })
     ],
     src: function(req) {
         return path.join(destPath, req.url);
+
     }
 }));
 

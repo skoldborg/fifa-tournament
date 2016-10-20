@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "nodemon",
-    "build": "webpack -w"
+    "build": "webpack -w",
+    "build-css": "node-sass --output-style compressed -o build src/styles/"
   },
   "keywords": [
     "boilerplate",
@@ -19,7 +20,10 @@
     "babel-core": "^6.17.0",
     "babel-loader": "^6.2.5",
     "babel-preset-es2015": "^6.16.0",
+    "cssnano": "^3.7.7",
     "modernizr-webpack-plugin": "^1.0.5",
+    "node-sass": "^3.10.1",
+    "sass-glob-importer": "^1.0.1",
     "webpack": "^1.13.2",
     "webpack-dev-middleware": "^1.8.4"
   },
