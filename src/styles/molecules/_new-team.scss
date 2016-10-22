@@ -1,0 +1,22 @@
+.new-team {
+    background-color: rgba(52,52,52,0.2);
+    text-align: center;
+    padding-bottom: 10px;
+    transition: background-color .2s ease;
+
+    &:hover {
+        z-index: 1000;
+        background-color: rgba(52,52,52,1);
+        transition: background-color .2s ease;
+    }
+}
+
+.new-team h2 {
+    font-size: 1.6em;
+    line-height: 200px;
+
+    &:hover {
+        color: #f0f0f0;
+        transition: color .1s ease;
+    }
+}

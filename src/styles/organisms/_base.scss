@@ -1,0 +1,44 @@
+body,html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+}
+
+body {
+    position: relative;
+    background-color: $white;
+    font: 16px 'Georgia', Helvetica, Arial, sans-serif;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+ 
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1, h2 {
+    font-size: 30px;
+    letter-spacing: 1px;
+    line-height: 40px;
+    color: #343434;
+    padding: 10px 0;
+}
+
+p {
+    color: #343434;
+    padding: 2px 0;
+}

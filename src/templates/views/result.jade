@@ -1,0 +1,24 @@
+extends ../layouts/default
+
+block content
+  h1 #{title}
+
+
+  form(action="/update", method="post")
+    select(name="homeTeam")
+      option(value="arsenal") Arsenal
+      option(value="bayern") Bayern Munich
+      option(value="dortmund") Bor. Dortmund
+      option(value="realmadrid") Real Madrid
+      option(value="juventus") Juventus
+      option(value="PSG") PSG
+
+    select(name="awayTeam")
+      option(value="arsenal") Arsenal
+      option(value="bayern") Bayern Munich
+      option(value="dortmund") Bor. Dortmund
+      option(value="realmadrid") Real Madrid
+      option(value="juventus") Juventus
+      option(value="PSG") PSG
+
+    button(type="submit") Send result

@@ -1,0 +1,53 @@
+.teams {
+    padding: 0px;
+    max-width: 100%;
+    margin: 10px 0 30px;
+    overflow: hidden;
+}
+
+.team {
+    float: left;
+    margin: 2px;
+    width: 20%;
+    max-width: 320px;
+    position: relative;
+    background-color: #f9f9f9;
+    padding-top: 20px;
+}
+
+.team__image {
+    width: 110px;
+    height: 110px;
+    border: 1px solid transparent;
+    margin: 0 auto;
+    background: no-repeat center center;
+    background-size: contain;
+}
+
+.team__content {
+    background-color: #f9f9f9;
+    padding: 15px;
+    text-shadow: 0px 1px 0px #fff;
+    text-align: center;
+}
+
+.team__name {
+    font-size: 18px;
+}
+
+.team__player-info {
+    padding: 4px 15px;
+    background-color: #f0f0f0;
+    overflow: hidden;
+}
+
+.team__player {
+    font-size: 14px;
+    display: block;
+    color: #343443;
+    padding: 10px 0;
+}
+
+.team__player-name {
+    color: #4D76A3;
+}

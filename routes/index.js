@@ -1,13 +1,14 @@
-const helpers = require('./helpers');
-const express = require('express')
+const express = require('express');
 const router = express.Router();
+const teams = require('./teams');
+const viewsDir = 'src/templates/views/';
 
-// VIEWS
-router.get('/*', (req, res, next) => {
-    res.locals.currentHost = helpers.getCurrentHost(req);
-    next();
+router.get('/', teams.fetch);
+
+router.get('/result', (req, res) => {
+    const jadeTemplate = path.resolve(path.join(path.join(__dirname, '../'), viewsDir, 'result.jade'));
+
+    res.render(jadeTemplate, { title: 'Register result' });
 });
-
-router.get('/', helpers.renderJade.bind(this, 'index') );
 
 module.exports = router;

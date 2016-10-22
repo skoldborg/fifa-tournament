@@ -21,6 +21,7 @@ const postcssMiddleware = require('postcss-middleware');
 const autoprefixer = require('autoprefixer');
 
 // Setup express
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Set view engine to jade
@@ -36,6 +37,12 @@ app.use(webpackDevMiddleware(webpackCompiler,
         publicPath: webpackConfig.output.publicPath
     }
 ));
+
+app.post('/update', (req, res) => {
+    console.log(req.body);
+
+    res.status(200).send('ok');
+});
 
 // Compile sass
 app.use('/styles',

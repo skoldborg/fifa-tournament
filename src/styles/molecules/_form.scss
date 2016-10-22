@@ -1,0 +1,51 @@
+.team-form {
+    width: 350px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 11px 10px 11px 13px;
+    display: block;
+    margin: 2px 0;
+    border: 0;
+    background: #f0f0f0;
+    font: 16px/1.4 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+textarea {
+    min-height: 200px;
+    height: auto;
+}
+
+:focus {
+    outline: none;
+}
+
+button {
+    width: 80px;
+    height: 30px;
+    border: 1px solid #f0f0f0;
+    background-color: #f0f0f0;
+    color: #343434;
+    font-size: 14px;
+}
+
+button.back,.submit {
+    margin-top: 20px;
+}
+
+button.submit:hover {
+    background-color: #343434;
+    color: #f0f0f0;
+    cursor: pointer;
+    transition: color .2s ease;
+}
+
+button.back:hover {
+    background-color: #343434;
+    color: #f0f0f0;
+    cursor: pointer;
+    transition: color .25s ease;
+}
+

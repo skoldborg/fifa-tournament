@@ -1,5 +1,43 @@
 extends ../layouts/default
 
 block content
+  h1 #{title} 
+  ul(class="teams")
+    each team in teams 
+      li(class="team")
+        .team__image(style="background-image: url(#{team.image})")
+        .team__content
+          p.team__name #{team.name}
 
-  h1 #{title}
+        .team__player-info
+          p.team__player
+            | Player: <span class="team__player-name">#{team.player}</span>
+
+  table.league-table
+    thead
+      tr
+        th Team
+        th GP
+        th W
+        th D
+        th L
+        th GF
+        th GA
+        th GD
+        th PTS
+
+    tbody
+      each team in teams
+        - var gd = team.stats.gf - team.stats.ga
+        - var pts = ((team.stats.w * 3) * team.stats.gp) + (team.stats.d * team.stats.gp)
+        tr
+          td #{team.name}
+          td #{team.stats.gp}
+          td #{team.stats.w}
+          td #{team.stats.d}
+          td #{team.stats.l}
+          td #{team.stats.gf}
+          td #{team.stats.ga}
+          td=gd
+          td=pts
+
