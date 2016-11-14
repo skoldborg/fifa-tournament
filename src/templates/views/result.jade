@@ -3,22 +3,29 @@ extends ../layouts/default
 block content
   h1 #{title}
 
+  form(action="/update", method="post", class="score-form")
+    .score-form__team
+      h3 Home team
+      select(name="homeTeam")
+        option(value="arsenal") Arsenal
+        option(value="bayern") Bayern Munich
+        option(value="dortmund") Bor. Dortmund
+        option(value="realmadrid") Real Madrid
+        option(value="juventus") Juventus
+        option(value="PSG") PSG
+      h3 Score
+      input(type="number", name="homeScore", class="score-form__score")
+    
+    .score-form__team
+      h3 Away team
+      select(name="awayTeam")
+        option(value="arsenal") Arsenal
+        option(value="bayern") Bayern Munich
+        option(value="dortmund") Bor. Dortmund
+        option(value="realmadrid") Real Madrid
+        option(value="juventus") Juventus
+        option(value="PSG") PSG
+      h3 Score
+      input(type="number", name="awayScore", class="score-form__score")
 
-  form(action="/update", method="post")
-    select(name="homeTeam")
-      option(value="arsenal") Arsenal
-      option(value="bayern") Bayern Munich
-      option(value="dortmund") Bor. Dortmund
-      option(value="realmadrid") Real Madrid
-      option(value="juventus") Juventus
-      option(value="PSG") PSG
-
-    select(name="awayTeam")
-      option(value="arsenal") Arsenal
-      option(value="bayern") Bayern Munich
-      option(value="dortmund") Bor. Dortmund
-      option(value="realmadrid") Real Madrid
-      option(value="juventus") Juventus
-      option(value="PSG") PSG
-
-    button(type="submit") Send result
+    button(type="submit", class="score-form__submit") Register

@@ -30,7 +30,6 @@ var teamSchema = new mongoose.Schema({
 
 var Teams = mongoose.model('teams', teamSchema);
 
-
 // Create new team
 // var dortmund = new Team({
 //     player: 'Carl',
@@ -48,8 +47,6 @@ var Teams = mongoose.model('teams', teamSchema);
 
 // // Save to database
 // dortmund.save(function (err) {if (err) console.log ('error')});
-
-
 
 // var matchSchema = new mongoose.Schema({
 //     home: String,

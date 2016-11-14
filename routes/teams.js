@@ -15,8 +15,11 @@ module.exports = {
     update: function(req, res) {
         var data = req.body;
         var homeTeam = data.homeTeam;
+        var homeScore = data.homeScore;
         var awayTeam = data.awayTeam;
+        var awayScore = data.awayScore;
 
+        console.log(data);
 
     }
 }
