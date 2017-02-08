@@ -38,11 +38,11 @@ app.use(webpackDevMiddleware(webpackCompiler,
     }
 ));
 
-app.post('/update', (req, res) => {
-    console.log(req.body);
+// app.post('/update', (req, res) => {
+//     console.log(req.body);
 
-    res.status(200).send('ok');
-});
+//     res.status(200).send('ok');
+// });
 
 // Compile sass
 app.use('/styles',
@@ -84,3 +84,5 @@ app.listen(port, function(error){
     if(error) throw error;
     console.log("Express server listening on port: ", port);
 });
+
+module.exports = app;

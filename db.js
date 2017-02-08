@@ -1,10 +1,10 @@
 require('dotenv').config();
 
-var http = require('http');
-var mongoose = require('mongoose');
+const http = require('http');
+const mongoose = require('mongoose');
 
-var uristring = process.env.MONGODB_URI;
-var port = process.env.PORT || 5000;
+const uristring = process.env.MONGODB_URI;
+const port = process.env.PORT || 5000;
 
 mongoose.connect(uristring, function (err, res) {
     if (err) {
@@ -14,7 +14,7 @@ mongoose.connect(uristring, function (err, res) {
     }
 });
 
-var teamSchema = new mongoose.Schema({
+const teamSchema = new mongoose.Schema({
     player: String,
     name: String,
     image: String,
@@ -28,7 +28,7 @@ var teamSchema = new mongoose.Schema({
     }
 });
 
-var matchSchema = new mongoose.Schema({
+const matchSchema = new mongoose.Schema({
     home: {
         team: String,
         goals: Number
@@ -39,6 +39,6 @@ var matchSchema = new mongoose.Schema({
     }
 });
 
-var Teams = mongoose.model('teams', teamSchema);
+const Team = mongoose.model('teams', teamSchema);
 
-module.exports = Teams;
+module.exports = Team;

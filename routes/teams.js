@@ -8,18 +8,7 @@ module.exports = {
         Teams.find().exec(function(err, teams) {
             if(err) res.send(err);
 
-            res.render(jadeTemplate, { title: 'Creuna Fifa Tournament', teams: teams });
+            res.render(jadeTemplate, { title: 'Creuna Fifa League', teams: teams });
         });
-    },
-
-    update: function(req, res) {
-        var data = req.body;
-        var homeTeam = data.homeTeam;
-        var homeScore = data.homeScore;
-        var awayTeam = data.awayTeam;
-        var awayScore = data.awayScore;
-
-        console.log(data);
-
     }
 }

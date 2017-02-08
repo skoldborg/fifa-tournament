@@ -17,15 +17,5 @@ $ yarn global add nodemon
 ## Development
 
 ```sh
-$ npm start
+$ npm run dev
 ```
-
-## Production
-
-No production step yet :(
-
-## Features
-
-- Webpack, w/ hot reloading
-- Babel (ES6)
-- Jade template engine
