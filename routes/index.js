@@ -2,6 +2,7 @@
 
 const express = require('express');
 const router = express.Router();
+const path = require('path');
 const Team = require('../db');
 const teams = require('./teams');
 const viewsDir = 'src/templates/views/';

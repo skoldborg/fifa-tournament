@@ -1,3 +1,4 @@
+const path = require('path');
 const Teams = require('../db');
 
 const viewsDir = 'src/templates/views/';
