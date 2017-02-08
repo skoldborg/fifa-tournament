@@ -1,6 +1,9 @@
 {
   "name": "boilerplate-2016-front-end",
   "version": "0.1.0",
+  "engines": {
+    "node": "6.4.0"
+  },
   "description": "",
   "main": "server.js",
   "scripts": {
