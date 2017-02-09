@@ -1,0 +1,20 @@
+extends ../layouts/default
+
+block content
+  h1 #{title}
+
+  form(action="/addTeam", method="post", class="team-form", enctype="multipart/form-data")
+      
+    h3 Player name
+    input(type="text" name="player")
+    br
+
+    h3 Team
+    input(type="text" name="team")
+    br
+
+    h3 Team logo
+    input(type="file" name="teamLogo" required)
+    br
+
+    button(type="submit") Add

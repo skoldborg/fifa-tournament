@@ -7,6 +7,19 @@ const Teams = require('../db');
 const teams = require('./teams');
 const viewsDir = 'src/templates/views/';
 
+// File storage
+const multer = require('multer');
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'src/images/');
+  },
+  filename: function (req, file, cb) {
+    cb(null, file.originalname);
+  }
+});
+const upload = multer({ storage: storage });
+
+
 router.get('/', teams.fetch);
 
 router.get('/result', (req, res) => {
@@ -19,7 +32,11 @@ router.get('/result', (req, res) => {
     });
 });
 
-router.post('/update', teams.update);
+router.get('/addTeam', (req, res) => {
+    let jadeTemplate = path.resolve(path.join(path.join(__dirname, '../'), viewsDir, 'addTeam.jade'));
+
+    res.render(jadeTemplate, { title: 'Add team'});
+});
 
 router.get('/reset/:team', function(req, res) {
     Teams.findOne({ name: req.params.team }, function(err, team) {
@@ -39,5 +56,9 @@ router.get('/reset/:team', function(req, res) {
         });
     });
 });
+
+router.post('/update', teams.update);
+
+router.post('/addTeam', upload.single('teamLogo'), teams.add);
 
 module.exports = router;
