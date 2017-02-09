@@ -82,6 +82,13 @@ module.exports = {
         let data = req.body;
         let filePath = '../images/' + req.file.filename;
 
+        let glitch = ['manchester united', 'man united', 'man u'];
+
+        if (glitch.indexOf(data.team.toLowerCase()) > -1) {
+            res.status(404).send('Glitch');
+            return;
+        }
+
         let newTeam = new Team({
             player: data.player,
             name: data.team,
