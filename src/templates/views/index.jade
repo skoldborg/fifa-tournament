@@ -4,6 +4,8 @@ block content
   h1 #{title}
 
   if teams.length > 0
+    h2 Teams
+
     ul(class="teams")
       each team in teams 
         li(class="team")
@@ -14,7 +16,8 @@ block content
           .team__player-info
             p.team__player
               | Player: <span class="team__player-name">#{team.player}</span>
-
+    
+    h2 League Table
     table.league-table
       thead
         tr

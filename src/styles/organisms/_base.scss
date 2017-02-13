@@ -31,13 +31,21 @@ a {
 }
 
 h1, h2 {
-    font-size: 30px;
     letter-spacing: 1px;
-    line-height: 40px;
     color: #343434;
     padding: 10px 0;
 }
 
+h1 {
+    font-size: 30px;
+    line-height: 40px;
+}
+
+h2 {
+    font-size: 26px;
+    line-height: 36px;
+}
+ 
 p {
     color: #343434;
     padding: 2px 0;
