@@ -16,9 +16,9 @@ var Sortable = (function() {
             // set current headers sorting index and parent table
             _theadCells[i]._columnIndex = i;
             _theadCells[i]._tbody = _table.tBodies[0];
-
-            sortRows(_theadCells[8]);
         }
+        
+        sortRows(_theadCells[8]);
     }
 
     var addClickListener = function(_theadCell) {
