@@ -52,7 +52,7 @@ module.exports = {
             if (err) throw err;
 
             let updatedStats = {
-                gp: team.stats.gp + 1,
+                gp: team.stats.gp += 1,
                 w: team.stats.w,
                 d: team.stats.d,
                 l: team.stats.l,
@@ -60,12 +60,12 @@ module.exports = {
                 ga: team.stats.ga + parseInt(result.homeScore)
             };
 
-            if (result.homeScore > result.awayScore) {
-                updatedStats['l'] = team.stats.l += 1;
+            if (result.homeScore < result.awayScore) {
+                updatedStats['w'] = team.stats.w += 1;
             } else if (result.homeScore === result.awayScore) {
                 updatedStats['d'] = team.stats.d += 1;
             } else {
-                updatedStats['w'] = team.stats.l += 1;
+                updatedStats['l'] = team.stats.l += 1;
             }
 
             team.stats = updatedStats;
@@ -82,10 +82,10 @@ module.exports = {
         let data = req.body;
         let filePath = '../images/' + req.file.filename;
 
-        let glitch = ['manchester united', 'man united', 'man u'];
+        let glitch = ['manchester united', 'man united', 'man u', 'dortmund', 'borussia', 'borussia dortmund'];
 
         if (glitch.indexOf(data.team.toLowerCase()) > -1) {
-            res.status(404).send('Glitch');
+            res.status(404).send("You've found a Glitch!");
             return;
         }
 
