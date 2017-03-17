@@ -100,7 +100,7 @@ module.exports = {
             return;
         }
 
-        let newTeam = new Team({
+        let newTeam = new Teams({
             player: data.player,
             name: data.team,
             image: filePath,
