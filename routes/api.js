@@ -2,17 +2,28 @@
 
 const path = require('path');
 const fs = require('fs');
-const Team = require('../db');
+const Teams = require('../database/teams');
+const Seasons = require('../database/seasons');
 const viewsDir = 'src/templates/views/';
 
 module.exports = {
     fetch: function(req, res) {
         let jadeTemplate = path.resolve(path.join(path.join(__dirname, '../'), viewsDir, 'index.jade'));
 
-        Team.find().exec(function(err, teams) {
-            if(err) res.send(err);
+        Teams.find().exec(function(err, teams) {
+            if (err) res.send(err);
 
             res.render(jadeTemplate, { title: 'Creuna Fifa League', teams: teams });
+        });
+    },
+
+    fetchSeasons: function(req, res) {
+        let jadeTemplate = path.resolve(path.join(path.join(__dirname, '../'), viewsDir, 'seasons.jade'));
+
+        Seasons.find().exec(function(err, seasons) {
+            if (err) res.send(err);
+
+            res.render(jadeTemplate, { title: 'Previous seasons', seasons: seasons });
         });
     },
 
@@ -20,7 +31,7 @@ module.exports = {
         let result = req.body;
 
         // update home team
-        Team.findOne({ name: result.homeTeam }, function(err, team) {
+        Teams.findOne({ name: result.homeTeam }, function(err, team) {
             if (err) throw err;
 
             let updatedStats = {
@@ -48,7 +59,7 @@ module.exports = {
         });
 
         // update away team
-        Team.findOne({ name: result.awayTeam }, function(err, team) {
+        Teams.findOne({ name: result.awayTeam }, function(err, team) {
             if (err) throw err;
 
             let updatedStats = {
@@ -110,21 +121,3 @@ module.exports = {
         });
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

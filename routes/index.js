@@ -3,8 +3,8 @@
 const express = require('express');
 const router = express.Router();
 const path = require('path');
-const Teams = require('../db');
-const teams = require('./teams');
+const Teams = require('../database/teams');
+const api = require('./api');
 const viewsDir = 'src/templates/views/';
 
 // File storage
@@ -20,7 +20,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 
-router.get('/', teams.fetch);
+router.get('/', api.fetch);
 
 router.get('/result', (req, res) => {
     let jadeTemplate = path.resolve(path.join(path.join(__dirname, '../'), viewsDir, 'result.jade'));
@@ -57,8 +57,10 @@ router.get('/reset/:team', function(req, res) {
     });
 });
 
-router.post('/update', teams.update);
+router.get('/seasons', api.fetchSeasons);
+ 
+router.post('/update', api.update);
 
-router.post('/addTeam', upload.single('teamLogo'), teams.add);
+router.post('/addTeam', upload.single('teamLogo'), api.add);
 
 module.exports = router;

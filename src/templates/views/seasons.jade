@@ -1,0 +1,37 @@
+extends ../layouts/default
+
+block content
+  h1 #{title}
+
+  if seasons.length > 0
+
+    each season in seasons
+
+      h2 Season ended #{season.date}
+      table.league-table
+        thead
+          tr
+            th Team
+            th GP
+            th W
+            th D
+            th L
+            th GF
+            th GA
+            th GD
+            th.sortable--sorted PTS
+
+        tbody
+          each team in season.teams
+            - var gd = team.stats.gf - team.stats.ga
+            - var pts = (team.stats.w * 3) + team.stats.d
+            tr
+              td #{team.name}
+              td #{team.stats.gp}
+              td #{team.stats.w}
+              td #{team.stats.d}
+              td #{team.stats.l}
+              td #{team.stats.gf}
+              td #{team.stats.ga}
+              td=gd
+              td=pts

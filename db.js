@@ -39,6 +39,25 @@ const matchSchema = new mongoose.Schema({
     }
 });
 
+const seasonSchema = new mongoose.Schema({
+    date: { type: Date, default: Date.now },
+    teams: [{
+        player: String,
+        name: String,
+        image: String,
+        stats: {
+            gp: Number,
+            w: Number,
+            d: Number,
+            l: Number,
+            gf: Number,
+            ga: Number
+        }
+    }]
+})
+
+const Season = mongoose.model('seasons', seasonSchema);
+
 const Team = mongoose.model('teams', teamSchema);
 
 module.exports = Team;

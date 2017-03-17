@@ -8,6 +8,11 @@ const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
 const destPath = path.join(__dirname, 'src');
 
+// Mongo
+const http = require('http');
+const mongoose = require('mongoose');
+const uristring = process.env.MONGODB_URI;
+
 // Webpack
 const webpackConfig = require('./webpack.config.js');
 const webpack = require('webpack');
@@ -23,6 +28,15 @@ const autoprefixer = require('autoprefixer');
 // Setup express
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+// Connect Mongodb
+mongoose.connect(uristring, function (err, res) {
+    if (err) {
+        console.log ('error connecting to: ' + uristring + '. ' + err);
+    } else {
+        console.log ('succeeded connected to: ' + uristring);
+    }
+});
 
 // Set view engine to jade
 app.set('view engine', 'jade');
