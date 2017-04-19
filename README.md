@@ -1,6 +1,6 @@
-# Front End Boilerplate
+# Fifa Tournament App
 
-Lightweight FE boilerplate w/ webpack workflow and a basic express server for routing
+Tournament application for football w/ support for adding teams, registering scores and displaying a league table. Uses a NodeJs backend with MongoDB.
 
 ## Install
 
